@@ -1,0 +1,91 @@
+
+Single Responsiblity Principle :
+    ==> It states that a class or Module should have single reason to change 
+    In other words,
+        A class should have a primary responsibility and it should not take up other reponsibilities.
+    
+    Module ==>      
+        Set of functions    ----------
+        Class                         \  Only 1 Actor can change this. Or whole functionality
+        Package                       /  change by only 1 Actor.
+        Source Code         ----------
+
+Example :
+    There is class called Employee
+    class Employee{
+        public:
+        calculateSalary();      ---> Used by CFO (Financial Person)
+        calculateHours();       ---> HR           (Person)
+        saveEmpData();          ---> TECHNICAL    (Person)
+    };
+
+    Now you can see , All 3 type of person need this 3 functionality written in single class .
+
+    Now eg. Consider there is one function uses 2 functionality from above class
+        
+                                            calculateSalary()
+        private : getRegularHours() <<<< ------ 
+                                            calculateHours()
+
+===> Now if there is any type of change happen in calculateSalary() which is required by CFO, 
+        then this calculation function will change in this class.
+
+     & it may require that there is a change is needed in getRegularHours() also ,
+     so the person who is making a change , he/she made a change here(getRegularHours()) also.
+
+     So here both public & private both method change.
+
+        private : getRegularHours() <<<< ------ 
+     Here  calculateHours() is also using same  getRegularHours() method , so that is why
+     internally this implementation breaks.
+
+===> 
+    So here CFO wants some change in some functionality , & due to his change HR person get
+    wrong DATA . because somebody change the underlying implementation of a private method which was used by both this public method. 
+
+        public     calculateSalary()
+                        |
+                       \|/
+        private :  getRegularHours() 
+                       /|\ 
+                        |
+        public     calculateHours()
+
+===> In short , eventhough all 3 person should not know each other info still ,
+     bcz of one private change in method , impacting other method of other person.
+
+===> So this is breaking the single responsibility principle.
+    Because thsi module is encapsulating the different functions of different functionality 
+    which affects the different Actors(persons) of the system.
+
+===> Single Responsibilty Principle :   
+        the code you are writing if that code request changes from only one actor or one stakeholderc or group of only one stakeholder which fulfill one buisness requirement till thst point it is fine
+        
+        But if one class has changes being requested from different stakeholders that means you are trying to put different buisness functionalities together in one module & you have broken the Single Responsibilty Principle.
+
+*** What is solution on this Problem ???
+===> 
+    A better way to this is to brak classes . In the above example , make 3 different classes.
+    1) SalaryCalculator
+    2) HoursCalculator
+    3) SaveEmployInfo
+
+    & all these classes can be called from different parts of the program.
+    Now in this case calculation of salary does not need to depend on any method that is used in Calculate Hours .
+    Similary , SaveEmployInfo method does not need to know about salary calculator / HoursCalculator Methods.
+
+===> Using this we can maintain Single Responsibilty Principle where the buisness function or buisness requirement OR the   buisness logic sits in particular classes & request for changing those business logic can only come from one particular stakeHolder .
+
+
+Note : It does not mean taht one class should have only one public method . That is not the meaning of 
+    Single Responsibilty Principle. 
+    The meaning is module collection of classes , functions should cator changes to a particular buisness stakeholder OR a group of stakeHolders through which changes come into the picture. 
+
+    If One Class Or One module has changes coming in from different buisness functions that means SOMETHING is foing WRONG.
+
+ARGUEMENT : 
+    You can argue like , if I keep on decomposing multiple classes . I will end up with lot of classes & where do I stop 
+
+    Its is upto your judgement and the buisness requirement that how do you organise your classes decompose your classes & put them together as long as it is fulfilling the buisness requirement and it is rendering the software easy to change .
+
+    As long as SW easy to change & it is not breaking the existing functionality that itself is a good signal that ypur design is good.
