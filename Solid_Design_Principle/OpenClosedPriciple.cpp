@@ -81,7 +81,7 @@ class Book : public Item{
     double bookPrice;
     public:
     Book(double b):bookPrice{b}{}
-    double CalculateCost(){
+    double CalculateCost() override {
         return bookPrice + (bookPrice * 10)/100 ;
     }
 
@@ -91,7 +91,7 @@ class Electronics : public Item{
     double ePrice;
     public:
     Electronics(double ep):ePrice{ep}{}
-    double CalculateCost(){
+    double CalculateCost() override {
         return ePrice + (ePrice * 20)/100;
     }
 };
