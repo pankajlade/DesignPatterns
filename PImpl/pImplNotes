@@ -1,0 +1,60 @@
+
+pImpl Idiom in C++ with examples.
+
+==> When changes are made to a header file , all sources including it needs to be recompiled .
+==> In large project & libraries , it can cause build time issues bcz , even when a small change to the implementatin 
+    is made everyone has to wait some time until they compile their code.
+
+==> One way to solve this problem is by using Pimpl Idiom. 
+    --> It hides the implementation in the headers & includes an interface file that compiles instantly. 
+
+==> PImpl Idiom   ==  (Pointer to Implementation) 
+    --> It is a technique used for separating implementation from the interface. 
+    --> It minimizes header exposure and helps programmes to reduce build dependencies by moving the private data 
+        members in a separate class & accessing them through an OPAQUE Pointer. 
+
+*** How to Implement ????
+==> 
+    1) Creat a separate class (or Struct) for implementation .
+    2) Put all private members from the header to that class .
+    3) Define an implementation class (Impl) in the header file .
+    4) In the header file create a forward declaration (a pointer) . Pointing at the implementation class.
+    5) Define a Destructor & a copy / Addignment operators.
+
+
+==> The reason to declare explicitly a destructor & throws a compilation error if its only forward declared.
+
+==> Using a smart pointer is a better approach since the pointer takes ontrol over the life cycle of the PImpl.
+
+Example :
+    1) The class defination is the header file included is the public interface of the class. 
+    2) We define a unique pointer instead of a raw one because the object of the interface type is reponsible
+        for the lifetime of the object.
+    3) Since std::unique_ptr is a complete type , it requires a User declared destructor & copy / Assignment operators in 
+        order for the implementation class to be complete.
+    4) The PImple Approach is transparent from the user's viewpoint . 
+    5) Changes made to the implementation structure, internally , 
+    6) It affects only the file containing it (User.cpp) 
+    7) This means that the user does not need to recompile in order for these changes to get applied.
+
+
+Advantage of PIMPL method :
+-------------------------    
+==> Binary Compatibility : The binary interface is not dependent of the private fields. Making changes to the implementation would not break the 
+                            dependent code .
+
+==> Compilation Time : Compilation time drops due to the fact that only the implementation file needs to be rebuilt instead of every 
+                        client recompiling his file .
+
+==> Data Hiding : Can easily hide certain internal details such as implementation techniques and other libraries used to implement the public interface.
+
+DisAdvantage of Pimpl Method:
+----------------------------
+
+==> Memory Management : Possible increase in memory usage due to more memory allocation that with the default structures which can be criticle in 
+                        Embedded Software developement.
+
+==> Maintenance Effort : The maintainance is becoming more complex due to the additional class in order to use PImpl & additional pointer Indirection .
+                        (Interface can be used only via Pointer/ Reference).
+
+==> Inheritance : Hidden Inheritance cannot be Inherited , although a class PImpl can.
