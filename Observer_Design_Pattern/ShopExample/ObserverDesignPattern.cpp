@@ -47,7 +47,7 @@ class ShopOperationSubject{
                 is unchanged and now erase's beginning is end of remove and end will be actual end of vector.
             */
             list.erase(std::remove(list.begin(),list.end(), shop), list.end());
-        };
+        }
 
         void notifyInfo(float price){
             for(vector<Shop *>::const_iterator iter=list.begin(); iter != list.end(); ++iter){

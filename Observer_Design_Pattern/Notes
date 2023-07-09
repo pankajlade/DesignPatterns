@@ -1,0 +1,23 @@
+
+==> When the observer design pattern we should use ? 
+Answer : 
+    The Observer design pattern is useful in scenarios where there is a one-to-many relationship between objects, and changes in one object need to be propagated to multiple dependent objects. Here are some situations where the Observer pattern can be beneficial:
+
+    1)  Event-driven systems: When you have an event-driven system where certain events or changes in one component need to trigger actions or 
+        updates in other components.
+
+    2)  GUI components: In graphical user interfaces, the Observer pattern is commonly used. For example, when a button is clicked, multiple UI 
+        components may need to react and update accordingly.
+
+    3)  Data synchronization: When multiple components or systems need to be synchronized with changes in a shared data source, the Observer pattern 
+        can be used to notify them about the changes.
+
+    4)  Pub/Sub systems: When you have a publish-subscribe system, where publishers generate events or messages, and multiple subscribers are 
+        interested in receiving and reacting to those messages.
+
+    5)  Model-View-Controller (MVC) pattern: The Observer pattern is a fundamental part of the MVC pattern. The model represents the subject, 
+        and the views act as observers, updating their state based on changes in the model.
+
+    By using the Observer pattern, you can achieve loose coupling between the subject and its observers. The subject does not need to know anything about its observers, and new observers can be added or removed without modifying the subject's code.
+
+    Overall, the Observer pattern is suitable in scenarios where you need a decoupled and flexible way to handle updates and communication between objects in a one-to-many relationship.
