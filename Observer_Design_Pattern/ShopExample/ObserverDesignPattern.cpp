@@ -30,7 +30,7 @@ class ShopOperationSubject{
     /*Let's keep a list of shop which you want to update whenever some update come.*/
     std::vector<Shop *> list;
 
-    std::vector<Shop*>::iterator itr;
+    std::vector<Shop*>::iterator iter;
     public:
         void SubcribeInfo(Shop * shop){
             list.push_back(shop);
@@ -50,8 +50,8 @@ class ShopOperationSubject{
         }
 
         void notifyInfo(float price){
-            for(vector<Shop *>::const_iterator iter=list.begin(); iter != list.end(); ++iter){
-                if(*iter != 0){
+            for( iter=list.begin(); iter != list.end(); ++iter){
+                if(*iter){
                     (*iter)->newUpdateShow(price);
                 }
             }
