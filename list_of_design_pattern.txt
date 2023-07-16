@@ -1,0 +1,102 @@
+
+list of all design pattern used in C++ 
+==> 
+
+    1) Singleton Pattern: Ensures that a class has only one instance and provides a global point of access to that instance.
+
+    2) Factory Method Pattern: Defines an interface for creating objects, but allows subclasses to decide which class to instantiate.
+
+    3) Abstract Factory Pattern: Provides an interface for creating families of related or dependent objects without specifying their concrete classes.
+
+    4) Builder Pattern: Separates the construction of a complex object from its representation, allowing the same construction process 
+        to create different representations.
+
+    5) Prototype Pattern: Creates new objects by copying an existing object, thus avoiding the overhead of creating new instances from scratch.
+
+    6) Adapter Pattern: Allows incompatible classes to work together by converting the interface of one class into another expected by the client.
+
+    7) Decorator Pattern: Dynamically adds behavior or responsibilities to objects without altering their structure.
+
+    8) Composite Pattern: Treats individual objects and compositions of objects uniformly, allowing the client to work with both in a consistent manner.
+
+    9) Proxy Pattern: Provides a surrogate or placeholder for another object to control access to it.
+
+    10) Observer Pattern: Defines a dependency between objects so that when one object changes state, all its dependents are notified and 
+        updated automatically.
+
+    11) Strategy Pattern: Allows selecting an algorithm's implementation at runtime without modifying the client.
+
+    12) Template Method Pattern: Defines the skeleton of an algorithm in a method, allowing subclasses to override specific steps of the algorithm.
+
+    13) State Pattern: Allows an object to change its behavior when its internal state changes.
+
+    14) Command Pattern: Encapsulates a request as an object, allowing parameterization of clients with different requests, queuing, 
+        and logging of requests.
+
+    15) Mediator Pattern: Centralizes communication between multiple objects, reducing their direct interactions.
+
+    16) Chain of Responsibility Pattern: Allows multiple objects to handle a request without the sender needing 
+        to know which object will ultimately process it.
+
+    17) Iterator Pattern: Provides a way to access elements of a collection sequentially without exposing its underlying representation.
+
+    18) Memento Pattern: Captures and restores an object's internal state without exposing its internal structure.
+
+    19) Flyweight Pattern: Shares data across multiple objects to conserve memory and improve performance.
+
+    20) Visitor Pattern: Separates the operations performed on an object structure from the classes that define the structure.
+
+Note 
+----
+    Please note that the above list doesn't cover every possible design pattern, but it includes some of the most commonly used ones in C++. 
+    Each design pattern addresses different design problems and can be combined to create flexible and maintainable software solutions.
+
+
+Certainly! Here are the remaining design patterns to complete the list:
+
+    21) Interpreter Pattern: Provides a way to evaluate sentences or expressions in a language using a specialized interpreter.
+
+    22) Bridge Pattern: Decouples an abstraction from its implementation, allowing both to vary independently.
+
+    23) Facade Pattern: Provides a simplified interface to a complex system or a set of interfaces, making it easier to use and understand.
+
+    24) Composite Entity Pattern: Represents a group of dependent objects as a single unit to provide a higher-level interface.
+
+    25) Front Controller Pattern: Centralizes request handling in a single controller to manage the flow of requests in a web application.
+
+    26) Data Access Object (DAO) Pattern: Separates data access logic from business logic, providing a transparent way to interact with data sources.
+
+    27) Business Delegate Pattern: Acts as an intermediary between a client and business services, decoupling the client from the service lookup and access.
+
+    28) Service Locator Pattern: Centralizes the lookup of services in a registry, improving performance and decoupling service consumers 
+        from service providers.
+
+    29) Transfer Object Pattern: Transfers a group of data in one go, reducing the number of remote calls between client and server.
+
+    30) Null Object Pattern: Provides an object as a surrogate for the lack of an object of a given type, to handle null values gracefully.
+
+    31) Value Object Pattern: Represents an object that contains attributes but has no conceptual identity, typically used for immutable types.
+
+    32) Lazy Initialization Pattern: Delays the creation of an object or the computation of a value until it is needed.
+
+    33) Double Checked Locking Pattern: Optimizes performance for multithreaded applications by minimizing locking overhead in lazy initialization.
+
+    34) Read-Write Lock Pattern: Allows multiple readers or a single writer to access a shared resource concurrently while maintaining consistency.
+
+    35) Guarded Suspension Pattern: Suspends the execution of a task until a condition is satisfied, to avoid race conditions.
+
+    36) Thread Pool Pattern: Manages a group of worker threads to execute tasks asynchronously, improving performance and resource management.
+
+    37) Producer-Consumer Pattern: Coordinates the distribution of tasks between producers (providers) and consumers (consumers) 
+        to process data efficiently.
+
+    38) Balking Pattern: Prevents an action from being performed multiple times when it is not needed or inappropriate.
+
+    39) Immutable Pattern: Ensures that an object's state cannot be modified after it has been created, making it thread-safe.
+
+    40) Extension Object Pattern: Adds new functionality to an existing object at runtime without modifying its original implementation.
+
+Note:
+    Please note that design patterns are tools and guidelines, not rigid rules, and their application depends on the specific problem 
+    and context of the software being developed. It's essential to understand the patterns and use them judiciously to achieve cleaner, 
+    more maintainable code.
