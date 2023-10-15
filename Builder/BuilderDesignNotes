@@ -10,7 +10,7 @@ Creational Patterns
     3) Wholesale (Single Statement) vs. piecewise (step-by-step)
 
 Structural Patterns
-    1) Concerned with the structuire(ef.class Members.)
+    1) Concerned with the structure(ef.class Members.)
     2) Many patterns are wrappers that mimic the underlying class interface.
     3) Stress the importance of good API design.
 
@@ -18,7 +18,7 @@ Behavioural Patterns
     1) They are all different :no central home .
 
 Lecture - 2:
-    1) Some objects are simple and can be created ina single constructor call .
+    1) Some objects are simple and can be created in a single constructor call .
     2) Other objects require a lot of ceremony to create.
     3) Having an object with 10 constructor arguments is not productive .
     4) Instead you should opt for piece wise construction. SO allow people to construct objects piece by piece and provide a good API for actually doing it.
@@ -37,14 +37,14 @@ While creating Object when object contain many attributes , Then there are many 
     1) We have to pass many arguments (OR Constructors) to create Object. 
             For more constructors , it is difficult to remember the order of passing arguments.
     2) Some parameters might be optional.
-            some of the parameters are mandatory that ypu must have to pass , in that case it creates a problem. To resolve that you might have to overload the constructor with required arguments . so like that many permutation of constructor will become , that you must have to implement.
+            some of the parameters are mandatory that you must have to pass , in that case it creates a problem. To resolve that you might have to overload the constructor with required arguments . so like that many permutation of constructor will become , that you must have to implement.
     3) Factory class may take all responsibility for creating object. If the object is heavy then all complexity is the part of factory class.
             if any problem happens while creating objects using factory class , then it becomes responsibility of factory class only .
 
     
 So in a BUILDER D.P. we create object step by step and finally return final object with desired value of attributes.
 
-    since object is complex we will set the propert step by step ,
+    since object is complex we will set the property step by step ,
     and finally we will called build() which we will return the object .
 
     example . LogBox application.
